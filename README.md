@@ -29,4 +29,4 @@ pip install -e ".[train]"
 I would like to express our gratitude to the following repositories:
 
 - [OpenVLA](https://github.com/openvla/openvla) - for providing the core structure and functionality that inspired OpenVLA-Qwen.
-- [LLaVA_OpenVLA](https://github.com/Darren-greenhand/LLaVA_OpenVLA) - for their contribution to data preprocessing techniques.
+- [LLaVA_OpenVLA](https://github.com/Darren-greenhand/LLaVA-Next) - for their contribution to data preprocessing techniques.
