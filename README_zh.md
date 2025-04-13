@@ -2,20 +2,20 @@
 
 # OpenVLA Lightweight Version
 
-Lightweight version of OpenVLA, based on the llava-next framework
+基于llava-next框架的OpenVLA轻量版。
 
-Features:
+特性：
 
-1.The main model is only 0.5B, using qwen2-0.5B.
+主模型只有0.5B，使用qwen2-0.5B。
 
-2.Does not use RLDS format datasets, instead fine-tuned using mllm format.
+不使用RLDS格式的数据集，而是采用mllm格式进行微调。
 
-3.Does not occupy inherent tokens of the LLM model, instead using an additional 271 tokens to represent actions.
-# How to use
+不占用LLM模型的固有token，而是使用额外的271个token来表示动作。
+# 如何使用
 
 ## Installation
 
-Follow the steps below to install the OpenVLA-Qwen lightweight version.
+按照以下步骤安装OpenVLA-Qwen轻量版。
 
 ### 1. Clone the repository
 
@@ -50,9 +50,9 @@ PREV_STAGE_CHECKPOINT="models/llava-onevision-qwen2-0.5b-ov"
 ```bash
 json_path: /root/data/vla_llava.json
 ```
-## Acknowledgements
+## 致谢
 
-This project makes use of the following open-source projects, and I would like to express my gratitude to their creators:
+本项目使用了以下开源项目，在此向其开发者表示感谢：
 
-- [OpenVLA](https://github.com/openvla/openvla) - For providing the core structure and functionality that inspired OpenVLA-Qwen.
-- [LLaVA_OpenVLA](https://github.com/Darren-greenhand/LLaVA-Next) - For his contribution to data preprocessing techniques.
+- [OpenVLA](https://github.com/openvla/openvla) - 感谢提供核心结构和功能，启发了OpenVLA-Qwen。
+- [LLaVA_OpenVLA](https://github.com/Darren-greenhand/LLaVA-Next) - 感谢他对数据处理技术的贡献。

@@ -7,7 +7,7 @@ export NCCL_DEBUG=INFO
 MIXTURE="qwen"
 PROMPT_VERSION="qwen_vla"
 RUN_NAME="openvla-${MIXTURE}" 
-PREV_STAGE_CHECKPOINT="models" 
+PREV_STAGE_CHECKPOINT="models/llava-onevision-qwen2-0.5b-ov" 
 echo "PREV_STAGE_CHECKPOINT: ${PREV_STAGE_CHECKPOINT}"
 echo "MID_RUN_NAME: ${RUN_NAME}"
 
