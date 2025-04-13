@@ -1,6 +1,6 @@
 # OpenVLA Lightweight Version
 
-OpenVLA的轻量化版本，使用
+OpenVLA的轻量化版本
 
 ## Installation
 
