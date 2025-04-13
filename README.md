@@ -14,6 +14,8 @@ Clone the repository to your local machine:
 git clone https://github.com/IP127000/openVLA-Qwen.git
 cd openVLA-Qwen
 
+### 1. Clone the repository
+```bash
 conda create -n vla-qwen python=3.10 -y
 conda activate vla-qwen
 
