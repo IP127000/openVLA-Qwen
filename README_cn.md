@@ -1,6 +1,11 @@
+**其他语言版本: [English](README_en.md), [中文](README_zh.md).**
 # OpenVLA Lightweight Version
 
-OpenVLA的轻量化版本
+OpenVLA的轻量化版本，基于llava-next框架
+特点：
+1.主体模型仅0.5B，使用qwen2-0.5B
+2.不使用RLDS格式数据集，使用mllm格式进行微调
+3.不占用LLM模型固有tokens,使用新增的271个tokens表示动作
 
 ## Installation
 
@@ -26,7 +31,7 @@ pip install -e ".[train]"
 ```
 ## Acknowledgements
 
-I would like to express our gratitude to the following repositories:
+I would like to express my gratitude to the following repositories:
 
 - [OpenVLA](https://github.com/openvla/openvla) - For providing the core structure and functionality that inspired OpenVLA-Qwen.
 - [LLaVA_OpenVLA](https://github.com/Darren-greenhand/LLaVA-Next) - For his contribution to data preprocessing techniques.

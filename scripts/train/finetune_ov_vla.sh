@@ -3,22 +3,11 @@ export NCCL_IB_DISABLE=0
 export NCCL_IB_GID_INDEX=3
 export NCCL_SOCKET_IFNAME=eth0
 export NCCL_DEBUG=INFO
-VISION_MODEL_VERSION="google/siglip-so400m-patch14-384"
-VISION_MODEL_VERSION_CLEAN="${VISION_MODEL_VERSION//\//_}"
-
-############### Pretrain ################
-
-BASE_RUN_NAME="llavanext-google_siglip-so400m-patch14-384-Qwen_Qwen2-7B-Instruct-mlp2x_gelu-pretrain_blip558k_plain"
-echo "BASE_RUN_NAME: ${BASE_RUN_NAME}"
-
 ############### Finetune ################
 MIXTURE="qwen"
-
-# Stage 2
 PROMPT_VERSION="qwen_vla"
-RUN_NAME="llava-openvla-${MIXTURE}" 
-PREV_STAGE_CHECKPOINT="/mnt/d/temp/huggingface/hub/llava_qwen_vla" 
-# PREV_STAGE_CHECKPOINT="/mnt/d/ckpt/llava-openvla-qwen"
+RUN_NAME="openvla-${MIXTURE}" 
+PREV_STAGE_CHECKPOINT="models" 
 echo "PREV_STAGE_CHECKPOINT: ${PREV_STAGE_CHECKPOINT}"
 echo "MID_RUN_NAME: ${RUN_NAME}"
 
@@ -30,8 +19,8 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
     --deepspeed scripts/zero2.json \
     --model_name_or_path $PREV_STAGE_CHECKPOINT \
     --version $PROMPT_VERSION \
-    --data_path /root/code/openvla-llava/LLaVA-Next/scripts/train/vla.yaml \
-    --image_folder /root/code/openvla-llava/LLaVA-Next/images \
+    --data_path scripts/train/vla.yaml \
+    --image_folder /images \
     --mm_tunable_parts="mm_language_model" \
     --mm_vision_tower_lr=2e-6 \
     --vision_tower google/siglip-so400m-patch14-384 \
@@ -45,7 +34,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
     --mm_patch_merge_type spatial_unpad \
     --bf16 True \
     --run_name $RUN_NAME \
-    --output_dir /mnt/d/ckpt_3_28/$RUN_NAME \
+    --output_dir /$RUN_NAME \
     --num_train_epochs 5 \
     --per_device_train_batch_size 8 \
     --per_device_eval_batch_size 100 \
@@ -70,5 +59,3 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node="${NUM_GPUS}" --nnodes="${NN
     --dataloader_drop_last True \
     --frames_upbound 1
 exit 0;
-
-# You can delete the sdpa attn_implementation if you want to use flash attn
