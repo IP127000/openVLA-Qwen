@@ -1,4 +1,4 @@
-**其他语言版本: [English](README_en.md), [中文](README_zh.md).**
+**其他语言版本: [English](README.md), [中文](README_zh.md).**
 # OpenVLA Lightweight Version
 
 OpenVLA的轻量化版本，基于llava-next框架
