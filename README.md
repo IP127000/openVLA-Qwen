@@ -50,6 +50,12 @@ PREV_STAGE_CHECKPOINT="models/llava-onevision-qwen2-0.5b-ov"
 ```bash
 json_path: /root/data/vla_llava.json
 ```
+
+### 6. start to train
+```bash
+cd /openVLA-Qwen2-0.5B
+./scripts/train/finetune_ov_vla.sh
+```
 ## Acknowledgements
 
 This project makes use of the following open-source projects, and I would like to express my gratitude to their creators:
